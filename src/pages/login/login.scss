@@ -1,3 +1,34 @@
 page-login {
 
+    .button-text{
+
+      background-color: transparent;
+      color:#000;
+
+      font-size: 13px;
+    }
+
+    .ion-items{
+
+    }
+
+    img{
+      padding: 0px;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top:10px;
+      width: 100%;
+  }
+
+  .input-login{
+    border-bottom: 2px solid #000;
+  }
+
+  .text-shadow{
+    text-shadow: 1px 1px 1px #000;
+  }
 }

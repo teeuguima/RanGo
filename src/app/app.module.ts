@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { LoginPageModule } from '../pages/login/login.module';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { CadastroPage } from '../pages/cadastro/cadastro';
+import { Cadastro2PageModule } from '../pages/cadastro2/cadastro2.module';
+import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule,
-    CadastroPageModule
+    CadastroPageModule,
+    Cadastro2PageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    CadastroPage
+    CadastroPage,
+    Cadastro2Page
   ],
   providers: [
     StatusBar,

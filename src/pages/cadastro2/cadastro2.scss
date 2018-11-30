@@ -1,8 +1,4 @@
-page-cadastro {
-  .flex-container{
-    display: flex;
-    flex-direction: column;
-  }
+page-cadastro2 {
 
   h1{
     font-family: 'MavenPro' !important;
@@ -11,14 +7,19 @@ page-cadastro {
 
 
     font-style: Medium;
-    font-weight: bold;
     font-weight: 500;
-    line-height: normal;
+    line-height: 25px;
     font-size: 22px;
+    box-align: left;
 
     color: #000000;
+
+
   }
 
 
-}
 
+  .tool-bar{
+    background-color: rgb(121, 13, 13);
+  }
+}

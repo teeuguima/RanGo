@@ -7,13 +7,16 @@
 
 
 <ion-content padding class="login-custom">
+
+    <img  src="/assets/imgs/logotipo2.png" class="center">
   <ion-list class="list-form">
+
     <ion-item>
       <ion-label color="dark" floating>
         <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
         Email
       </ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input class="input-login" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -21,15 +24,23 @@
         <ion-icon ios="ios-key" md="md-key"></ion-icon>
         Senha
       </ion-label>
-      <ion-input class="item-input i" type="text"></ion-input>
+      <ion-input class="input-login" type="text"></ion-input>
     </ion-item>
   </ion-list>
 
   <button class="btnForget"><strong> Esqueceu a senha?</strong></button>
 
-  <div>
-    <button (click)="onCadastro()" style="padding: 20px 14px;" ion-button icon-start block color="turb"> Entrar</button>
-  </div>
+  <ion-list>
+    <button (click)="onCadastro()" ion-button icon-start block color="danger"> Entrar</button>
+  </ion-list>
+
+  <ion-row center>
+      <ion-col text-center>
+        <button class="button-text"><strong>Cadastre-se</strong></button>
+      </ion-col>
+  </ion-row>
+
+
 
 
 
