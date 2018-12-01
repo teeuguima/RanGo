@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the Cadastro2Page page.
  *
@@ -18,8 +19,12 @@ export class Cadastro2Page {
 
   formPagament: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, ) {
   }
+
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Cadastro2Page');

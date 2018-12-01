@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 
 /**
@@ -16,7 +16,26 @@ import { CadastroPage } from '../cadastro/cadastro';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public emailRecuperar: String;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  }
+
+  showAlertConfirm(){
+    const alert = this.alertCtrl.create({
+      title: 'Confirmação',
+      subTitle: 'Link de confirmação enviado para'+this.emailRecuperar,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  showAlertNulo(){
+    const alert = this.alertCtrl.create({
+      title: 'Erro',
+      subTitle: 'E-mail não cadastrado ou incorreto',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   ionViewDidLoad() {
@@ -26,5 +45,48 @@ export class LoginPage {
   onCadastro(){
     this.navCtrl.push(CadastroPage);
   }
+
+  showPrompt(){
+
+    const prompt = this.alertCtrl.create({
+        title: 'E-mail de Recuperação',
+        message: "Insira o e-mail usado para fazer login, será enviado um link de confirmação",
+
+        inputs:[
+          {
+            name: 'email',
+            placeholder: 'Email'
+          },
+
+        ],
+
+        buttons:[
+          {
+            text: 'Cancelar',
+            handler: data => {
+              console.log('Cancelar clicked');
+            }
+          },
+          {
+            text: 'Enviar',
+            handler: data =>{
+              console.log(this.emailRecuperar);
+
+            }
+          }
+
+        ]
+    });
+    prompt.present();
+  }
+
+  confirmAlert(){
+    if(this.emailRecuperar != null){
+      this.showAlertConfirm();
+    }else{
+      this.showAlertNulo();
+    }
+  }
+
 
 }

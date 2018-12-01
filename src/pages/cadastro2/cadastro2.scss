@@ -17,6 +17,61 @@ page-cadastro2 {
 
   }
 
+  .list-forms {
+
+    margin-bottom: 5px;
+    padding:5px;
+    margin-left: 0px;
+    position: absolute;
+    font-size: 18px;
+    top: 0px;
+
+    ion-item {
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      ion-label {
+        font-size: 1em;
+
+      }
+
+      input {
+
+      }
+    }
+
+    ion-checkbox{
+      margin-bottom: 5px;
+    }
+
+    ion-label{
+      margin-bottom: 5px;
+    }
+
+
+
+
+  }
+
+  .button-input{
+    margin: 10px;
+    width: 299px;
+    height: 38px;
+    position: relative;
+    margin-right: 115px;
+  }
+
+  .positionElements{
+    padding-top: 50px;
+    position: relative;
+  }
+
 
 
   .tool-bar{

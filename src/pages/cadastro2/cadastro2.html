@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar danger >
+  <ion-navbar danger>
     <ion-title>Cadastro</ion-title>
   </ion-navbar>
 
@@ -17,45 +17,49 @@
   <div>
     <h1>Dados do <BR> Representante Legal</h1>
   </div>
-    <ion-list class="form-cadastro">
-      <ion-item>
-        <ion-label color="dark" floating>Nome Completo</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
+  <ion-list class="list-forms">
+    <ion-item>
+      <ion-label color="dark" floating>Nome Completo</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label color="dark" floating>Telefone</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label color="dark" floating>Telefone</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label color="dark" floating>Email</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label color="dark" floating>Email</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label color="dark" floating>Senha</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label color="dark" floating>Senha</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
 
-      <ion-item >
-        <ion-label color="dark">Forma de Pagamento</ion-label>
-        <ion-select [(ngModel)]="formPagament">
-          <ion-option value="card">Cartão de Crédito</ion-option>
-          <ion-option value="cash">Dinheiro</ion-option>
-          <ion-option value="ticket">Ticket Alimentação</ion-option>
-        </ion-select>
-      </ion-item>
+    <ion-item>
+      <ion-label color="dark">Forma de Pagamento</ion-label>
+      <ion-select [(ngModel)]="formPagament">
+        <ion-option value="card">Cartão de Crédito</ion-option>
+        <ion-option value="cash">Dinheiro</ion-option>
+        <ion-option value="ticket">Ticket Alimentação</ion-option>
+      </ion-select>
+    </ion-item>
 
-      <ion-item>
-          <ion-label>Li e aceito os termos de uso</ion-label>
-          <ion-checkbox color="dark" checked="false"></ion-checkbox>
-      </ion-item>
+    <ion-row left>
+      <ion-label color="dark">Aceito os termos de uso</ion-label>
+      <ion-checkbox checked="false"></ion-checkbox>
+    </ion-row>
 
-      <ion-list>
-        <button ion-button icon-start block color="danger"> Finalizar Cadastro</button>
-      </ion-list>
-    </ion-list>
+    <ion-row center>
+      <ion-col text-center>
+        <button class="item-button" ion-button color="danger">Finalizar Cadastro</button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+
 
 
 </ion-content>
