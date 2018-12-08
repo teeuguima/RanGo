@@ -1,3 +1,5 @@
+import { HomePage } from './../home/home';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -22,7 +24,9 @@ export class Cadastro2Page {
   constructor(public navCtrl: NavController, public navParams: NavParams, ) {
   }
 
-
+  nextPage(){
+    this.navCtrl.push(HomePage);
+  }
 
 
 

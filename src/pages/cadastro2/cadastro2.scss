@@ -19,30 +19,38 @@ page-cadastro2 {
 
   .list-forms {
 
-    margin-bottom: 5px;
-    padding:5px;
-    margin-left: 0px;
     position: absolute;
+    margin-bottom: 20%;
+    padding-top:5%;
+    margin-left: 0%;
+    margin-right:0%;
+
     font-size: 18px;
     top: 0px;
 
     ion-item {
 
       &:first-child {
-        border-top: none;
+        margin: 0%;
       }
 
       &:after {
-        display: none;
+        margin: 0%;
+        display: block;
       }
 
       ion-label {
         font-size: 1em;
+        margin: 7%;
 
       }
 
-      input {
+      ion-checkbox{
+        margin-bottom: 20%;
+      }
 
+      input {
+        margin: 0%;
       }
     }
 
@@ -56,15 +64,15 @@ page-cadastro2 {
 
 
 
-
   }
 
   .button-input{
-    margin: 10px;
-    width: 299px;
-    height: 38px;
+    margin: 8%;
+    width: 90%;
+    height: 65%;
     position: relative;
-    margin-right: 115px;
+    margin-left: 8%;
+
   }
 
   .positionElements{
