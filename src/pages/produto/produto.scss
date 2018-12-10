@@ -1,3 +1,51 @@
 page-produto {
+  h1{
+    font-family: 'MavenPro' !important;
+    padding-top: 15px;
+    margin: 18px;
 
+
+    font-style: Medium;
+    font-weight: bold;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 18px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .button-style{
+    padding: 0%;
+    margin: 2%;
+    width: 70%;
+    height: 120%;
+    position: relative;
+    margin-left: 0%;
+  }
+
+  .cadastro-form{
+    padding: 0%;
+    margin-left: 2%;
+    margin-right: 0%;
+    position: absolute;
+
+  }
+
+  ion-input {
+    margin:3%;
+    border-bottom: 1px solid #000;
+    ::placeholder{
+        color:black !important;
+    }
+  }
+
+  .button-Finalizar{
+    //float: center;
+    margin-top:5%;
+    padding: 0%;
+    width: 299px;
+    height: 38px;
+
+  }
 }

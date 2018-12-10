@@ -7,12 +7,57 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>produto</ion-title>
+    <ion-title>Cadastrar Produto</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-row center>
+    <ion-col text-center>
+      <button ion-button color="dark" outline class="button-style">
+        <ion-icon name="camera" style="zoom: 2.5;"></ion-icon>
+        &nbsp;Enviar Foto
+      </button>
+    </ion-col>
+  </ion-row>
+  <!-- <h1> Sobre o Produto</h1> -->
+
+
+  <!--<img class="center" src="https://img.icons8.com/material/48/000000/camera.png">-->
+  <ion-list class="cadastro-form">
+    <ion-item>
+      <ion-input placeholder="Nome do produto" [(ngModel)]="nome_produto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-input placeholder="Preço" [(ngModel)]="preco_produto" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-input placeholder="Tempo médio de preparo" [(ngModel)]="tempo_produto" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Ingredientes" [(ngModel)]="ingredientes_produto" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item margin-left="10px">
+      <ion-label>Disponivel</ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+
+    <ion-row center>
+        <ion-col text-center>
+          <button class="button-Finalizar" ion-button color="danger">Finalizar Cadastro</button>
+        </ion-col>
+      </ion-row>
+
+  </ion-list>
+
 
 </ion-content>

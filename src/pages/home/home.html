@@ -29,18 +29,17 @@
     <ion-card-content>
       <p>{{descricao_vendedor}}</p>
     </ion-card-content>
-
-    <ion-row center>
-      <ion-col>
-        <button ion-button color="dark" outline class="button-style" font-size= "25px">
-          <ion-icon style="zoom:1.5;" name="add-circle"></ion-icon>
-          &nbsp;Adicionar Produto
-        </button>
-      </ion-col>
-    </ion-row>
-
   </ion-card>
+
   <ion-card>
+      <ion-row center>
+          <ion-col>
+            <button ion-button color="dark" outline class="button-style" font-size= "25px" (click)="cadastrarProduto()">
+              <ion-icon style="zoom:1.5;" name="add-circle"></ion-icon>
+              &nbsp;Adicionar Produto
+            </button>
+          </ion-col>
+        </ion-row>
     <ion-list-header class="ion-list-header style">Produtos a Venda</ion-list-header>
 
   </ion-card>

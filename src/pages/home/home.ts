@@ -2,6 +2,7 @@ import { HomeInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ProdutoPage } from './../produto/produto';
 
 /**
  * Generated class for the HomePage page.
@@ -30,6 +31,9 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
+  cadastrarProduto(){
+    this.navCtrl.push(ProdutoPage);
+  }
 
 
 }

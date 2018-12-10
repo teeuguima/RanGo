@@ -15,6 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProdutoPage {
 
+  nome_produto: string="";
+  tempo_produto: string="";
+  preco_produto: string="";
+  ingredientes_produto: string="";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

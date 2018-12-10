@@ -1,3 +1,4 @@
+import { ProdutoPage } from './../pages/produto/produto';
 import { HomePageModule } from './../pages/home/home.module';
 import { HomePage } from './../pages/home/home';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +13,7 @@ import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { Cadastro2PageModule } from '../pages/cadastro2/cadastro2.module';
 import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
+import { ProdutoPageModule } from '../pages/produto/produto.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
     CadastroPageModule,
     Cadastro2PageModule,
     HomePageModule,
+    ProdutoPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,6 +35,7 @@ import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
     CadastroPage,
     Cadastro2Page,
     HomePage,
+    ProdutoPage,
   ],
   providers: [
     StatusBar,
