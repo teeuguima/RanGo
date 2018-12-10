@@ -14,6 +14,7 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
 import { Cadastro2PageModule } from '../pages/cadastro2/cadastro2.module';
 import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
 import { ProdutoPageModule } from '../pages/produto/produto.module';
+import { EmailValidator } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,134 @@ import { ProdutoPageModule } from '../pages/produto/produto.module';
 })
 export class AppModule {
 
+}
+
+
+@Injectable()
+export class LoginInfo{
+  private static email: string;
+  private static senha: string;
+
+  static setEmail(email: string){
+    this.email = email;
+  }
+
+  static getEmail(){
+    return this.email;
+  }
+
+  static setSenha(senha: string){
+    this.senha = senha;
+  }
+
+  static getSenha(){
+    return this.senha;
+  }
+}
+
+@Injectable()
+export class CadastroInfo{
+
+  private static nome_negocio: string;
+  private static endereco_fixo: string;
+  private static telefone_negocio: string;
+  private static categoria_negocio: string;
+  private static limite_entrega: number;
+  private static valor_frete: number;
+
+  private static nome_responsavel: string;
+  private static sobrenome_responsavel: string;
+  private static email: string;
+  private static senha: string;
+  private static formaPagamento: string;
+
+  static setNomeNegocio(nome:string){
+    this.nome_negocio = nome;
+  }
+
+  static getNome_Vendedor(){
+    return this.nome_negocio;
+  }
+
+  static setEndereco(endereco: string){
+    this.endereco_fixo = endereco;
+  }
+
+  static getEndereco(){
+    return this.endereco_fixo;
+  }
+
+  static setLimiteEntrega(limite: number){
+    this.limite_entrega = limite;
+  }
+
+  static getLimiteEntrega(){
+    return this.limite_entrega;
+  }
+
+  static setTelefone(telefone : string){
+    this.telefone_negocio = telefone;
+  }
+
+  static getTelefone(){
+    return this.telefone_negocio
+  }
+
+  static setCategoria(categoria: string){
+    this.categoria_negocio = categoria;
+  }
+
+  static getCategoria(){
+    return this.categoria_negocio;
+  }
+
+  static setValorFrete(valor: number){
+    this.valor_frete = valor;
+  }
+
+  static getValorFrete(){
+    return this.valor_frete;
+  }
+
+  static setNomeDono(nome: string){
+    this.nome_responsavel = nome;
+  }
+
+  static getNomeDono(){
+    return this.nome_responsavel;
+  }
+
+  static setSobreNome(sobrenome: string){
+    this.sobrenome_responsavel = sobrenome;
+  }
+
+  static getSobreNome(){
+    return this.sobrenome_responsavel;
+  }
+
+  static setEmail(email: string){
+    this.email = email;
+  }
+
+  static getEmail(){
+    return this.email;
+  }
+
+  static setSenha(senha: string){
+    this.senha = senha
+  }
+
+  static getSenha(){
+    return this.senha;
+  }
+
+  static setFormaPagamento(forma_pagamento: string){
+    this.formaPagamento = forma_pagamento;
+  }
+
+  static getFormaPagamento(){
+    return this.formaPagamento;
+  }
 }
 
 @Injectable()
@@ -94,8 +223,5 @@ export class HomeInfo{
   static getCategoria(){
     return this.categoria;
   }
-
-
-
 
 }

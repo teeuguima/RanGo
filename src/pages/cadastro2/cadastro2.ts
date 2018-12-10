@@ -1,3 +1,4 @@
+import { CadastroInfo } from './../../app/app.module';
 import { HomePage } from './../home/home';
 
 import { Component } from '@angular/core';
@@ -18,8 +19,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Cadastro2Page {
 
-
-  formPagament: String;
+  nome: string;
+  sobrenome: string;
+  email: string;
+  senha: string;
+  formPagament: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, ) {
   }
@@ -32,6 +36,14 @@ export class Cadastro2Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Cadastro2Page');
+  }
+
+  cadastroResponsavel(){
+    CadastroInfo.setNomeDono(this.nome);
+    CadastroInfo.setSobreNome(this.sobrenome);
+    CadastroInfo.setEmail(this.email);
+    CadastroInfo.setSenha(this.senha);
+    CadastroInfo.setFormaPagamento(this.formPagament);
   }
 
 }

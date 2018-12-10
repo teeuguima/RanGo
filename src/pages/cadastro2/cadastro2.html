@@ -19,23 +19,18 @@
   </div>
   <ion-list class="list-forms">
     <ion-item>
-      <ion-label color="dark" floating>Nome Completo</ion-label>
+      <ion-label [(ngModel)]="nome" color="dark" floating>Nome Completo</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="dark" floating>Telefone</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="dark" floating>Email</ion-label>
+      <ion-label [(ngModel)]="email"color="dark" floating>Email</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="dark" floating>Senha</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="senha" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -54,7 +49,7 @@
 
     <ion-row center>
       <ion-col text-center>
-        <button class="button-input" ion-button color="danger" (click)="nextPage()">Finalizar Cadastro</button>
+        <button class="button-input" ion-button color="danger" (click)="nextPage()" (click)="cadastroResponsavel()" >Finalizar Cadastro</button>
       </ion-col>
     </ion-row>
   </ion-list>

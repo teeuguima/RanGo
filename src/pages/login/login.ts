@@ -1,3 +1,4 @@
+import { LoginInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
@@ -16,7 +17,9 @@ import { CadastroPage } from '../cadastro/cadastro';
 })
 export class LoginPage {
 
-  public emailRecuperar: String;
+   email: string;
+   senha: string;
+  private emailRecuperar: String;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
@@ -86,6 +89,11 @@ export class LoginPage {
     }else{
       this.showAlertNulo();
     }
+  }
+
+  confirmLogin(){
+    LoginInfo.setEmail(this.email);
+    LoginInfo.setSenha(this.senha);
   }
 
 

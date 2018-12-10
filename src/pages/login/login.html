@@ -15,7 +15,7 @@
         <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
         Email
       </ion-label>
-      <ion-input class="input-login" type="text"></ion-input>
+      <ion-input class="input-login" [(ngModel)]="email" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -23,7 +23,7 @@
         <ion-icon ios="ios-key" md="md-key"></ion-icon>
         Senha
       </ion-label>
-      <ion-input class="input-login" type="text"></ion-input>
+      <ion-input class="input-login" [(ngModel)]="senha" type="password"></ion-input>
     </ion-item>
   </ion-list>
 

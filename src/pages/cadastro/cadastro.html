@@ -24,7 +24,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label color="dark" floating>CPF/CNPJ</ion-label>
+        <ion-label color="dark" floating>CPF</ion-label>
         <ion-input class="placeholder-text"  type="text"></ion-input>
       </ion-item>
 
@@ -46,12 +46,12 @@
 
       <ion-item>
         <ion-label color="dark" floating>Limite de Distância de Entrega</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="limite_distancia" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label  color="dark" floating>Valor do Frete (por Km)</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="valor_frete" type="text"></ion-input>
       </ion-item>
 
       <ion-row center>
