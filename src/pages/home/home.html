@@ -9,13 +9,25 @@
   <ion-navbar>
     <ion-title>home</ion-title>
   </ion-navbar>
-
+  <ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <button ion-item>
+          Carteira
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 </ion-header>
 
 
 <ion-content padding>
   <ion-card class="card-style">
-
     <ion-item>
       <ion-avatar item-start>
         <img src="img/marty-avatar.png">
@@ -32,14 +44,14 @@
   </ion-card>
 
   <ion-card>
-      <ion-row center>
-          <ion-col>
-            <button ion-button color="dark" outline class="button-style" font-size= "25px" (click)="cadastrarProduto()">
-              <ion-icon style="zoom:1.5;" name="add-circle"></ion-icon>
-              &nbsp;Adicionar Produto
-            </button>
-          </ion-col>
-        </ion-row>
+    <ion-row center>
+      <ion-col>
+        <button ion-button color="dark" outline class="button-style" font-size="25px" (click)="cadastrarProduto()">
+          <ion-icon style="zoom:1.5;" name="add-circle"></ion-icon>
+          &nbsp;Adicionar Produto
+        </button>
+      </ion-col>
+    </ion-row>
     <ion-list-header class="ion-list-header style">Produtos a Venda</ion-list-header>
 
   </ion-card>
