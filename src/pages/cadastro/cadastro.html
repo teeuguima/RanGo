@@ -15,53 +15,45 @@
 
 
 <ion-content padding>
-  <div >
+  <div>
     <h1>Dados do <BR> Ponto Alimentício</h1>
-    <ion-list class="form-cadastro">
+    <ion-list class="list-forms">
+
       <ion-item>
-        <ion-label color="dark" floating>Nome do Seu Negócio</ion-label>
-        <ion-input class="placeholder-text" [(ngModel)] = "nome_negocio"></ion-input>
+        <ion-input placeholder="Nome do Seu Negócio" class="placeholder-text" [(ngModel)]="nome_negocio"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="dark" floating>CPF</ion-label>
-        <ion-input class="placeholder-text"  type="text"></ion-input>
+        <ion-input placeholder="CPF" class="placeholder-text" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="dark" floating>Telefone</ion-label>
-        <ion-input class="placeholder-text" [(ngModel)]="telefone_negocio" type="text"></ion-input>
+        <ion-input placeholder="Telefone" class="placeholder-text" [(ngModel)]="telefone_negocio" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="dark" floating>Endereço</ion-label>
-        <ion-input class="placeholder-text" [(ngModel)]="endereco_negocio" type="text"></ion-input>
+        <ion-input  placeholder="Endereço (Opcional)"class="placeholder-text" [(ngModel)]="endereco_negocio" type="text"></ion-input>
       </ion-item>
 
 
       <ion-item>
-        <ion-label color="dark" floating>Categoria do Ponto Alimentício</ion-label>
-        <ion-input class="placeholder-text"[(ngModel)]="categoria_negocio" type="text"></ion-input>
+        <ion-input placeholder="Categoria do Ponto Alimentício" class="placeholder-text" [(ngModel)]="categoria_negocio"
+          type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="dark" floating>Limite de Distância de Entrega</ion-label>
-        <ion-input [(ngModel)]="limite_distancia" type="text"></ion-input>
+        <ion-input placeholder="Limite de Distância" [(ngModel)]="limite_distancia" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-          <ion-label  color="dark" floating>Valor do Frete (por Km)</ion-label>
-          <ion-input [(ngModel)]="valor_frete" type="text"></ion-input>
+        <ion-input placeholder="Valor do Frete/Km" [(ngModel)]="valor_frete" type="text"></ion-input>
       </ion-item>
 
       <ion-row center>
-          <ion-col text-center>
-              <button class="item-button" ion-button color="danger" (click)="nextCadaster()" (click)="setInfo()">Continuar</button>
-          </ion-col>
+        <ion-col text-center>
+          <button class="item-button" ion-button color="danger" (click)="nextCadaster()" (click)="setInfo()">Continuar</button>
+        </ion-col>
       </ion-row>
-
-
-
 
     </ion-list>
 

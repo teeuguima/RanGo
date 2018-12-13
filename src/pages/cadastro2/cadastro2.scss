@@ -2,8 +2,9 @@ page-cadastro2 {
 
   h1{
     font-family: 'MavenPro' !important;
-    padding-top: 15px;
-    margin: 18px;
+    padding-top: 4%;
+    margin: 10%;
+    margin-left: 6%;
 
 
     font-style: Medium;
@@ -20,12 +21,13 @@ page-cadastro2 {
   .list-forms {
 
     position: absolute;
+    padding: 0%;
     margin-bottom: 20%;
-    padding-top:5%;
+    padding-top:9%;
     margin-left: 0%;
     margin-right:0%;
 
-    font-size: 18px;
+    font-size: 16px;
     top: 0px;
 
     ion-item {
@@ -41,12 +43,13 @@ page-cadastro2 {
 
       ion-label {
         font-size: 1em;
-        margin: 7%;
-
+        margin: 3%;
+        color: #000;
       }
 
       ion-checkbox{
         margin-bottom: 20%;
+
       }
 
       input {
@@ -54,32 +57,27 @@ page-cadastro2 {
       }
     }
 
-    ion-checkbox{
-      margin-bottom: 5px;
+    ion-input {
+      margin:2%;
+      padding-top: 8%;
+      padding-bottom: 3%;
+      border-bottom: 1px solid #000;
+      ::placeholder{
+          color:black !important;
+          font-size: 16px;
+      }
     }
 
-    ion-label{
-      margin-bottom: 5px;
-    }
-
-
-
   }
 
-  .button-input{
-    margin: 8%;
-    width: 90%;
-    height: 65%;
-    position: relative;
-    margin-left: 8%;
+  .button-Continuar{
+    //float: center;
+    margin-top:5%;
+    padding: 0%;
+    width: 120%;
+    height: 120%;
 
   }
-
-  .positionElements{
-    padding-top: 50px;
-    position: relative;
-  }
-
 
 
   .tool-bar{
