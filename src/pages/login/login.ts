@@ -2,7 +2,7 @@ import { LoginInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
-import {socket} from 'socket.io';
+
 
 
 /**
@@ -12,7 +12,7 @@ import {socket} from 'socket.io';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -22,7 +22,7 @@ export class LoginPage {
    email: string;
    senha: string;
   private emailRecuperar: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public Socket: socket) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   showAlertConfirm(){
@@ -97,12 +97,6 @@ export class LoginPage {
 
   }
 
-  login(){
-    this.Socket.connect();
-    this.Socket.emit('get-email', this.email);
-    this.Socket.emit('get-pass', this.senha);
-    LoginInfo.setEmail(this.email);
-    LoginInfo.setSenha(this.senha);
-  }
+
 
 }

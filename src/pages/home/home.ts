@@ -1,6 +1,6 @@
 import { HomeInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,MenuController } from 'ionic-angular';
 
 import { ProdutoPage } from './../produto/produto';
 
@@ -11,7 +11,7 @@ import { ProdutoPage } from './../produto/produto';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -24,7 +24,19 @@ export class HomePage {
   telefone_vendedor: String = "3625-4627";
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+  }
+
+  openMenu(){
+    this.menuCtrl.open();
+  }
+
+  closeMenu(){
+    this.menuCtrl.close();
+  }
+
+  toggleRightMenu(){
+    this.menuCtrl.toggle('right');
   }
 
   ionViewDidLoad() {

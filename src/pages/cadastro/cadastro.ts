@@ -1,8 +1,8 @@
-import { socket } from 'socket.io';
-import { HomeInfo, CadastroInfo } from './../../app/app.module';
+
+import {CadastroInfo } from './../../app/app.module';
 import { Cadastro2Page } from './../cadastro2/cadastro2';
-import { Component, Input } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from '@angular/core';
+import {NavController, NavParams } from 'ionic-angular';
 
 
 /**
@@ -12,7 +12,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-cadastro',
   templateUrl: 'cadastro.html',
@@ -27,7 +27,7 @@ export class CadastroPage {
   valor_frete: string;
   CPF_Dono: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public Socket:socket) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -44,9 +44,7 @@ export class CadastroPage {
     HomeInfo.setEndereco(this.endereco_negocio);
     HomeInfo.setCategoria(this.categoria_negocio);*/
 
-    this.Socket.connect();
-    this.Socket.emit('set-dados', this.nome_negocio, this.CPF_Dono,
-    this.telefone_negocio, this.valor_frete, this.categoria_negocio, this.endereco_negocio, this.CPF_Dono, this.limite_distancia);
+
 
 
 
@@ -57,9 +55,6 @@ export class CadastroPage {
     CadastroInfo.setLimiteEntrega(parseFloat(this.limite_distancia));
     CadastroInfo.setValorFrete(parseFloat(this.valor_frete));
 
-    this.navCtrl.push(Cadastro2Page, {nome: this.nome_negocio, cpf: this.CPF_Dono,
-                                     telefone: this.telefone_negocio, endereco_negocio: this.endereco_negocio
-                                    ,categoria: this.categoria_negocio, valor_frete: this.valor_frete,
-                                     limite:this.limite_distancia});
+
   }
 }
