@@ -14,7 +14,10 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
 import { Cadastro2PageModule } from '../pages/cadastro2/cadastro2.module';
 import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
 import { ProdutoPageModule } from '../pages/produto/produto.module';
-import { EmailValidator } from '@angular/forms';
+
+import{SocketIoModule, SocketIoConfig} from 'ng-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { EmailValidator } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    SocketIoModule.forRoot(config),
     IonicModule.forRoot(MyApp),
     LoginPageModule,
     CadastroPageModule,
@@ -74,104 +78,113 @@ export class LoginInfo{
 @Injectable()
 export class CadastroInfo{
 
-  private static nome_negocio: string;
-  private static endereco_fixo: string;
-  private static telefone_negocio: string;
-  private static categoria_negocio: string;
-  private static limite_entrega: number;
-  private static valor_frete: number;
+  private  nome_negocio: string;
+  private  endereco_fixo: string;
+  private  telefone_negocio: string;
+  private  categoria_negocio: string;
+  private  limite_entrega: number;
+  private  valor_frete: number;
 
-  private static nome_responsavel: string;
-  private static sobrenome_responsavel: string;
-  private static email: string;
-  private static senha: string;
-  private static formaPagamento: string;
+  private  nome_responsavel: string;
+  private  sobrenome_responsavel: string;
+  private  email: string;
+  private  senha: string;
+  private  formaPagamento: string;
 
-  static setNomeNegocio(nome:string){
+  constructor(){
+
+
+  }
+
+
+
+
+
+  public setNomeNegocio(nome:string){
     this.nome_negocio = nome;
   }
 
-  static getNome_Vendedor(){
+   getNome_Vendedor(){
     return this.nome_negocio;
   }
 
-  static setEndereco(endereco: string){
+   setEndereco(endereco: string){
     this.endereco_fixo = endereco;
   }
 
-  static getEndereco(){
+   getEndereco(){
     return this.endereco_fixo;
   }
 
-  static setLimiteEntrega(limite: number){
+   setLimiteEntrega(limite: number){
     this.limite_entrega = limite;
   }
 
-  static getLimiteEntrega(){
+   getLimiteEntrega(){
     return this.limite_entrega;
   }
 
-  static setTelefone(telefone : string){
+   setTelefone(telefone : string){
     this.telefone_negocio = telefone;
   }
 
-  static getTelefone(){
+   getTelefone(){
     return this.telefone_negocio
   }
 
-  static setCategoria(categoria: string){
+   setCategoria(categoria: string){
     this.categoria_negocio = categoria;
   }
 
-  static getCategoria(){
+   getCategoria(){
     return this.categoria_negocio;
   }
 
-  static setValorFrete(valor: number){
+   setValorFrete(valor: number){
     this.valor_frete = valor;
   }
 
-  static getValorFrete(){
+   getValorFrete(){
     return this.valor_frete;
   }
 
-  static setNomeDono(nome: string){
+   setNomeDono(nome: string){
     this.nome_responsavel = nome;
   }
 
-  static getNomeDono(){
+   getNomeDono(){
     return this.nome_responsavel;
   }
 
-  static setSobreNome(sobrenome: string){
+   setSobreNome(sobrenome: string){
     this.sobrenome_responsavel = sobrenome;
   }
 
-  static getSobreNome(){
+   getSobreNome(){
     return this.sobrenome_responsavel;
   }
 
-  static setEmail(email: string){
+   setEmail(email: string){
     this.email = email;
   }
 
-  static getEmail(){
+   getEmail(){
     return this.email;
   }
 
-  static setSenha(senha: string){
+   setSenha(senha: string){
     this.senha = senha
   }
 
-  static getSenha(){
+   getSenha(){
     return this.senha;
   }
 
-  static setFormaPagamento(forma_pagamento: string){
+   setFormaPagamento(forma_pagamento: string){
     this.formaPagamento = forma_pagamento;
   }
 
-  static getFormaPagamento(){
+   getFormaPagamento(){
     return this.formaPagamento;
   }
 }

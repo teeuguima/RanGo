@@ -35,7 +35,15 @@ export class CadastroPage {
   }
 
   nextCadaster(){
-    this.navCtrl.push(Cadastro2Page);
+    this.navCtrl.push(Cadastro2Page, {
+      nome: this.nome_negocio,
+      endereco: this.endereco_negocio,
+      telefone: this.telefone_negocio,
+      categoria: this.categoria_negocio,
+      limite: this.limite_distancia,
+      frete: this.valor_frete,
+      cpf: this.CPF_Dono
+    });
   }
 
   setInfo(){
@@ -44,17 +52,14 @@ export class CadastroPage {
     HomeInfo.setEndereco(this.endereco_negocio);
     HomeInfo.setCategoria(this.categoria_negocio);*/
 
-
-
-
-
+    /*
     CadastroInfo.setNomeNegocio(this.nome_negocio);
     CadastroInfo.setTelefone(this.telefone_negocio);
     CadastroInfo.setEndereco(this.endereco_negocio);
     CadastroInfo.setCategoria(this.categoria_negocio);
     CadastroInfo.setLimiteEntrega(parseFloat(this.limite_distancia));
     CadastroInfo.setValorFrete(parseFloat(this.valor_frete));
-
+    */
 
   }
 }

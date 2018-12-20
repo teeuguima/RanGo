@@ -19,7 +19,19 @@
   </div>
   <ion-list class="list-forms">
     <ion-item>
-      <ion-input placeholder="Nome Completo" type="text" [(ngModel)]="nome" ></ion-input>
+      <ion-input placeholder="Nome" type="text" [(ngModel)]="nomeResponsavel" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Sobrenome" type="text" [(ngModel)]="sobrenome" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label  color="dark">Sexo</ion-label>
+        <ion-select [(ngModel)]="sexo">
+          <ion-option value="card">Feminino</ion-option>
+          <ion-option value="cash">Masculino</ion-option>
+        </ion-select>
     </ion-item>
 
     <ion-item>
