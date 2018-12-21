@@ -4,6 +4,7 @@ import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Socket} from 'ng-socket-io';
+import { LoginPage } from '../login/login';
 
 
 /**
@@ -31,7 +32,7 @@ export class Cadastro2Page {
   }
 
   nextPage(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(LoginPage);
   }
 
 
