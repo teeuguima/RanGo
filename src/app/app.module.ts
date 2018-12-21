@@ -33,6 +33,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     Cadastro2PageModule,
     HomePageModule,
     ProdutoPageModule,
+    SocketIoModule.forRoot(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
