@@ -6,12 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
+    <ion-buttons start right>
+      <button ion-button show menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>home</ion-title>
-    <!--<ion-buttons class="button-menu" end>
-      <ion-icon name="menu"></ion-icon>
-    </ion-buttons>-->
-
   </ion-navbar>
 </ion-header>
 
@@ -42,9 +43,23 @@
         </button>
       </ion-col>
     </ion-row>
-    <ion-list-header class="ion-list-header style">Produtos a Venda</ion-list-header>
+    <ion-list>
+      <ion-list-header class="ion-list-header style">Produtos a Venda</ion-list-header>
+      <ion-item *ngFor="let produto of produtos">
+        <button class="cards-input-1">
+          <img src="/src/assets/imgs/produtos.png">
+          <div class="texts-cards">
+            <h5 class="textCard-title">
+              {{produto.nome}}
+            </h5>
+            <h6 class="textCard">
+              Preco:{{produto.preco}}
+            </h6>
+          </div>
+        </button>
+      </ion-item>
+    </ion-list>
+
 
   </ion-card>
 </ion-content>
-
-

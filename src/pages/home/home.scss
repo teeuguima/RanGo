@@ -2,6 +2,34 @@ page-home {
 
 }
 
+.cards-input-1, .cards-input-2, .cards-input-3, .cards-input-4 {
+  width: 165px;
+  height: 167px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.texts-cards {
+  display: flex;
+  flex-direction: column;
+}
+.textCard-title {
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+.textCard {
+  margin-top: 9px;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .button-style{
   margin: 8%;
   width: 90%;

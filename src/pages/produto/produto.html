@@ -46,14 +46,9 @@
       <ion-input placeholder="Ingredientes" [(ngModel)]="ingredientes_produto" type="text"></ion-input>
     </ion-item>
 
-    <ion-item margin-left="10px">
-      <ion-label>Disponivel</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
-    </ion-item>
-
     <ion-row center>
         <ion-col text-center>
-          <button class="button-Finalizar" ion-button color="danger">Finalizar Cadastro</button>
+          <button class="button-Finalizar" ion-button color="danger" (click)="cadastrar()">Finalizar Cadastro</button>
         </ion-col>
       </ion-row>
 

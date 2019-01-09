@@ -1,4 +1,4 @@
-import { ProdutoPage } from './../pages/produto/produto';
+import { CarteiraPage } from './../pages/carteira/carteira';
 import { HomePageModule } from './../pages/home/home.module';
 import { HomePage } from './../pages/home/home';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +14,9 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
 import { Cadastro2PageModule } from '../pages/cadastro2/cadastro2.module';
 import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
 import { ProdutoPageModule } from '../pages/produto/produto.module';
+import { ProdutoPage } from './../pages/produto/produto';
+import { CarteiraPageModule } from '../pages/carteira/carteira.module';
+import {TabsPage} from '../pages/tabs/tabs';
 
 import{SocketIoModule, SocketIoConfig} from 'ng-socket-io';
 
@@ -22,7 +25,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
 @NgModule({
   declarations: [
     MyApp,
-
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     Cadastro2PageModule,
     HomePageModule,
     ProdutoPageModule,
+    CarteiraPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,6 +45,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     Cadastro2Page,
     HomePage,
     ProdutoPage,
+    CarteiraPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
@@ -48,6 +54,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
+
 export class AppModule {
 
 }

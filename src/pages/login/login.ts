@@ -1,8 +1,11 @@
 import { LoginInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import {NavController, NavParams, AlertController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
+import {LoadingController} from 'ionic-angular';
+import { Socket } from 'ng-socket-io';
 
+import { HomePage } from '../home/home';
 
 
 /**
@@ -22,7 +25,28 @@ export class LoginPage {
    email: string;
    senha: string;
   private emailRecuperar: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  public alertCtrl: AlertController, public loadingCtrl: LoadingController, private socket: Socket) {
+    socket.on('retorno-login-vendedor', (retorno) => {
+      if (retorno === 0) { // sucesso
+        console.log('Login realizado com sucesso!');
+        this.navCtrl.push(HomePage)
+      } else if (retorno === 1) { // email não cadastrado
+        console.log('Email não cadastrado no sistema.');
+      } else if (retorno === 2) { // senha incorreta
+        console.log('Senha incorreta.');
+      }
+    });
+  }
+
+  presentLoading(){
+    const loader = this.loadingCtrl.create({
+      content : "Carregando...",
+      duration: 2000
+    });
+    loader.present();
+
+
   }
 
   showAlertConfirm(){
@@ -93,8 +117,12 @@ export class LoginPage {
     }
   }
 
-  confirmLogin(){
-
+  clickEntrar() {
+    LoginInfo.setEmail(this.email);
+    this.socket.emit('login-vendedor', {
+      email: this.email,
+      senha: this.senha
+    });
   }
 
 

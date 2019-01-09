@@ -1,8 +1,8 @@
-import { CadastroInfo } from './../../app/app.module';
-import { HomePage } from './../home/home';
+import { TabsPage } from './../tabs/tabs';
+
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ToastController } from 'ionic-angular';
 import {Socket} from 'ng-socket-io';
 import { LoginPage } from '../login/login';
 
@@ -28,14 +28,28 @@ export class Cadastro2Page {
   formPagament: string;
   sexo: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public socket: Socket ) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private socket: Socket, private toastCtrl: ToastController ) {
+    socket.on('retorno-cadastro-vendedor', (retorno) => {
+      if (retorno === 0) { // sucesso
+        this.showToast('Cadastro realizado com sucesso.');
+        navCtrl.push(LoginPage);
+      } else if (retorno === 1) { // cpf repetido
+        this.showToast('Cadastro não realizado. CPF já cadastrado no sistema.');
+      } else if (retorno === 2) { // email repetido
+        this.showToast('Cadastro não realizado. Email já cadastrado no sistema.');
+      }
+    });
   }
 
+  /*
+  nextPage(){
+    this.navCtrl.push(TabsPage);
+  }
+  */
   nextPage(){
     this.navCtrl.push(LoginPage);
   }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Cadastro2Page');
@@ -55,7 +69,14 @@ export class Cadastro2Page {
       pagamento: this.formPagament,
       email: this.email,
       senha: this.senha
-    })
+    });
+  }
+
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 3000
+    }).present();
   }
 
 }
