@@ -1,7 +1,6 @@
-import { LoginInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import {Socket} from 'ng-socket-io';
+import { Socket } from 'ng-socket-io';
 
 /**
  * Generated class for the ProdutoPage page.
@@ -16,8 +15,6 @@ import {Socket} from 'ng-socket-io';
   templateUrl: 'produto.html',
 })
 export class ProdutoPage {
-
-  produtos= [];
 
   nome_produto: string="";
   tempo_produto: string="";
@@ -38,11 +35,6 @@ export class ProdutoPage {
         this.showToast('Ocorreu um erro durante o cadastro do produto.');
       }
     });
-
-
-
-
-
   }
 
   ionViewDidLoad() {
@@ -65,7 +57,5 @@ export class ProdutoPage {
       duration: 3000
     }).present();
   }
-
-
 
 }

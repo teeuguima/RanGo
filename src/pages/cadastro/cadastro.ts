@@ -1,5 +1,5 @@
 
-import {CadastroInfo } from './../../app/app.module';
+
 import { Cadastro2Page } from './../cadastro2/cadastro2';
 import { Component } from '@angular/core';
 import {NavController, NavParams } from 'ionic-angular';
