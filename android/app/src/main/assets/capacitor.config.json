@@ -1,0 +1,6 @@
+{
+  "appId": "com.rango.uefs.br",
+  "appName": "RanGo",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

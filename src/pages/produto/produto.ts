@@ -1,3 +1,4 @@
+import { LoginInfo } from './../../app/app.module';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Socket } from 'ng-socket-io';
@@ -31,10 +32,15 @@ export class ProdutoPage {
         this.preco_produto = '';
         this.ingredientes_produto = '';
         this.disponivel = false;
-      } else { // nunca deve entrar aqui
+      } else if(retorno === 1) { // nunca deve entrar aqui
+        this.showToast('CPF não encontrado');
+      }
+      else{
         this.showToast('Ocorreu um erro durante o cadastro do produto.');
       }
     });
+
+
   }
 
   ionViewDidLoad() {
@@ -47,7 +53,8 @@ export class ProdutoPage {
       preco: this.preco_produto,
       tempoMedioPreparo: this.tempo_produto,
       descricao: this.ingredientes_produto,
-      disponivel: this.disponivel
+      disponivel: this.disponivel,
+      email: LoginInfo.getEmail() //Informação válida para buscar o cpf no banco de dados
     });
   }
 

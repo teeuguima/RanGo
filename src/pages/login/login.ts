@@ -1,10 +1,11 @@
+import { LoginInfo } from './../../app/app.module';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 import { Socket } from 'ng-socket-io';
-import { ProdutoPage } from '../produto/produto';
-import { HomePage } from '../home/home';
+
+import { TabsPage } from '../tabs/tabs';
 
 
 
@@ -29,13 +30,16 @@ export class LoginPage {
     socket.on('retorno-login-vendedor', (retorno) => {
       if (retorno === 0) { // sucesso
         console.log('Login realizado com sucesso!');
-        this.navCtrl.push(HomePage)
+        this.navCtrl.push(TabsPage);
+        LoginInfo.setEmail(this.email);
       } else if (retorno === 1) { // email não cadastrado
         console.log('Email não cadastrado no sistema.');
       } else if (retorno === 2) { // senha incorreta
         console.log('Senha incorreta.');
       }
     });
+
+
   }
 
   showAlertConfirm(){
