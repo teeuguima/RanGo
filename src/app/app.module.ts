@@ -1,4 +1,4 @@
-import { ComponentsModule } from './../components/components.module';
+
 import { DetalPedidoPageModule } from './../pages/detal-pedido/detal-pedido.module';
 import { DetalPedidoPage } from './../pages/detal-pedido/detal-pedido';
 import { PendentesPageModule } from './../pages/pendentes/pendentes.module';
@@ -9,6 +9,8 @@ import { NgModule, ErrorHandler, Injectable} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import{Geolocation} from '@ionic-native/geolocation';
+import {IonicStorageModule} from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -41,6 +43,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     LoginPageModule,
     CadastroPageModule,
     Cadastro2PageModule,
@@ -50,7 +53,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     SocketIoModule.forRoot(config),
     PendentesPageModule,
     DetalPedidoPageModule,
-    ComponentsModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -71,6 +74,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

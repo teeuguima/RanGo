@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 /**
  * Generated class for the DetalPedidoPage page.
@@ -25,6 +26,8 @@ export class DetalPedidoPage {
   quantidade: number = 10;
   detalhesPedido = [];
   statusPedido = this.navParams.get(status);
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

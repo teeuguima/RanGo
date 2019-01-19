@@ -8,10 +8,23 @@
 
 
 <ion-content padding>
+
+  <button ion-button full icon-left (click)="startTracking()"  *ngIf="!isTracking">
+    <ion-icon name="locate"></ion-icon>
+    Start Tracking
+  </button>
+
+  <button ion-button full icon-left (click)="stopTracking()" *ngIf="!isTracking">
+    <ion-icon name="hand"></ion-icon>
+    Stop Tracking
+  </button>
+
+  <div #map></div>
+  <!--
   <ion-item class="styl-item">
-    <!--<ion-thumbnail class="tamanho-img" item-start>
+    <ion-thumbnail class="tamanho-img" item-start>
       <img src="/assets/imgs/produtos.png">
-    </ion-thumbnail> -->
+    </ion-thumbnail>
     <h2>Pedido: {{pedido}}</h2>
     <p>Cliente: {{nome_cliente}}</p>
     <p>Total: {{preco}}</p>
@@ -20,4 +33,7 @@
     <p>{{statusPedido}}</p>
 
   </ion-item>
+   -->
+
+
 </ion-content>
