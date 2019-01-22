@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import {Socket} from 'ng-socket-io';
 import { LoginPage } from '../login/login';
+import { FirebaseServiceProvider } from '../../providers/firebase-service/firebase-service';
 
 
 /**
@@ -21,14 +22,28 @@ import { LoginPage } from '../login/login';
 })
 export class Cadastro2Page {
 
-  nomeResponsavel: string;
-  sobrenome: string;
-  email: string;
-  senha: string;
-  formPagament: string;
-  sexo: string;
+  vendedor = {
+    'nome'           :'',
+    'endereco'       :'',
+    'telefone'       :'',
+    'categoria'      :'',
+    'limite'         :'',
+    'frete'          :'',
+    'cpf'            :'',
+    'nomeResponsavel':'',
+    'sobrenome'      :'',
+    'email'          :'',
+    'senha'          :'',
+    'formPagament'   :'',
+    'sexo'           :''
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public socket: Socket, private toastCtrl: ToastController ) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public socket: Socket, 
+              private toastCtrl: ToastController,
+              public dbService : FirebaseServiceProvider
+              ) {
     socket.on('retorno-cadastro-vendedor', (retorno) => {
       if (retorno === 0) { // sucesso
         this.showToast('Cadastro realizado com sucesso.');
@@ -39,10 +54,21 @@ export class Cadastro2Page {
         this.showToast('Cadastro não realizado. Email já cadastrado no sistema.');
       }
     });
+
+    // pegando variaveis do cadastro1 e interando aqui
+
+    this.vendedor.nome = navParams.get('nome');
+    this.vendedor.endereco = navParams.get('endereco');
+    this.vendedor.telefone = navParams.get('telefone');
+    this.vendedor.categoria = navParams.get('categoria');
+    this.vendedor.limite = navParams.get('limite');
+    this.vendedor.frete = navParams.get('frete');
+    this.vendedor.cpf = navParams.get('cpf');
+    
   }
 
-  nextPage(){
-    this.cadastroResponsavel();
+  salvarVendedor(vendedor){
+    this.dbService.saveVendedor(vendedor);
   }
 
 
@@ -51,22 +77,7 @@ export class Cadastro2Page {
     console.log('ionViewDidLoad Cadastro2Page');
   }
 
-  cadastroResponsavel(){
-    this.socket.emit('cadastro-vendedor', {
-      nomeNegocio: this.navParams.get('nome'),
-      cpf: this.navParams.get('cpf'),
-      telefone: this.navParams.get('telefone'),
-      categoriaEstabelecimento: this.navParams.get('categoria'),
-      limiteEntrega: this.navParams.get('limite'),
-      valorFrete: this.navParams.get('frete'),
-      nomeVendedor: this.nomeResponsavel,
-      sobrenomeVendedor: this.sobrenome,
-      sexo: 'M',
-      email: this.email,
-      senha: this.senha,
-      formaPagamento: this.formPagament,
-    });
-  }
+  
 
   showToast(msg) {
     this.toastCtrl.create({

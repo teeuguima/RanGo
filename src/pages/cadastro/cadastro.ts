@@ -23,9 +23,9 @@ export class CadastroPage {
   endereco_negocio: string="";
   telefone_negocio: string="";
   categoria_negocio: string="";
-  limite_distancia: string;
-  valor_frete: string;
-  CPF_Dono: string;
+  limite_distancia: string ="";
+  valor_frete: string = "";
+  CPF_Dono: string = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -44,22 +44,5 @@ export class CadastroPage {
       frete: this.valor_frete,
       cpf: this.CPF_Dono
     });
-  }
-
-  setInfo(){
-    /*HomeInfo.setNome_Vendedor(this.nome_negocio);
-    HomeInfo.setTelefone(this.telefone_negocio);
-    HomeInfo.setEndereco(this.endereco_negocio);
-    HomeInfo.setCategoria(this.categoria_negocio);*/
-
-    /*
-    CadastroInfo.setNomeNegocio(this.nome_negocio);
-    CadastroInfo.setTelefone(this.telefone_negocio);
-    CadastroInfo.setEndereco(this.endereco_negocio);
-    CadastroInfo.setCategoria(this.categoria_negocio);
-    CadastroInfo.setLimiteEntrega(parseFloat(this.limite_distancia));
-    CadastroInfo.setValorFrete(parseFloat(this.valor_frete));
-    */
-
   }
 }

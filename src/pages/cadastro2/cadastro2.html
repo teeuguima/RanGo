@@ -19,32 +19,32 @@
   </div>
   <ion-list class="list-forms">
     <ion-item>
-      <ion-input placeholder="Nome" type="text" [(ngModel)]="nomeResponsavel" ></ion-input>
+      <ion-input placeholder="Nome" type="text" [(ngModel)]="vendedor.nomeResponsavel" ></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input placeholder="Sobrenome" type="text" [(ngModel)]="sobrenome" ></ion-input>
+      <ion-input placeholder="Sobrenome" type="text" [(ngModel)]="vendedor.sobrenome" ></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label  color="dark">Sexo</ion-label>
-        <ion-select [(ngModel)]="sexo">
+        <ion-select [(ngModel)]="vendedor.sexo">
           <ion-option value="card">Feminino</ion-option>
           <ion-option value="cash">Masculino</ion-option>
         </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-input placeholder="Email" type="text"[(ngModel)]="email"></ion-input>
+      <ion-input placeholder="Email" type="text"[(ngModel)]="vendedor.email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input placeholder="Senha"[(ngModel)]="senha" type="text"></ion-input>
+      <ion-input placeholder="Senha"[(ngModel)]="vendedor.senha" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label  color="dark">Forma de Pagamento</ion-label>
-      <ion-select [(ngModel)]="formPagament">
+      <ion-select [(ngModel)]="vendedor.formPagament">
         <ion-option value="card">Cartão de Crédito</ion-option>
         <ion-option value="cash">Dinheiro</ion-option>
         <ion-option value="ticket">Ticket Alimentação</ion-option>
@@ -58,7 +58,7 @@
 
     <ion-row center>
       <ion-col text-center>
-        <button class="button-Continuar" ion-button color="danger" (click)="nextPage()">Finalizar Cadastro</button>
+        <button class="button-Continuar" ion-button color="danger" (click)="salvarVendedor(vendedor)">Finalizar Cadastro</button>
       </ion-col>
     </ion-row>
   </ion-list>

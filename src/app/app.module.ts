@@ -29,6 +29,9 @@ import { LoginPage } from '../pages/login/login';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { Cadastro2Page } from '../pages/cadastro2/cadastro2';
 import { PendentesPage } from '../pages/pendentes/pendentes';
+import { AngularFireModule } from 'angularfire2'
+import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
 
@@ -53,7 +56,19 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     SocketIoModule.forRoot(config),
     PendentesPageModule,
     DetalPedidoPageModule,
+    AngularFireModule.initializeApp(
 
+      {
+        apiKey: "AIzaSyCMLK9LsP3XDfk_4mlG3ohGpxfLfV3rl0Y",
+        authDomain: "rangobd-92bda.firebaseapp.com",
+        databaseURL: "https://rangobd-92bda.firebaseio.com",
+        projectId: "rangobd-92bda",
+        storageBucket: "rangobd-92bda.appspot.com",
+        messagingSenderId: "1074311459018"
+      }
+
+    ),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -75,7 +90,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseServiceProvider
   ]
 })
 export class AppModule {}

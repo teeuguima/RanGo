@@ -12,7 +12,7 @@ import { PendentesPage } from '../pages/pendentes/pendentes';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = PendentesPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
