@@ -38,6 +38,8 @@ export class Cadastro2Page {
     'sexo'           :''
   };
 
+  private vendedorAtual;
+
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public socket: Socket, 
@@ -64,12 +66,36 @@ export class Cadastro2Page {
     this.vendedor.limite = navParams.get('limite');
     this.vendedor.frete = navParams.get('frete');
     this.vendedor.cpf = navParams.get('cpf');
+
+
+
+    
+    this.vendedorAtual = this.dbService.getAllVendedor();
+
+    /*
+    let retorno : any;
+    this.vendedorAtual.array.forEach(element => {
+      if(element.cpf === this.vendedor.cpf){
+        retorno = 0;
+      }
+      else if(element.email === this.vendedor.email){
+        retorno = 1;
+      }
+      else {
+        retorno = 2;
+      }
+    });
+    */
     
   }
 
   salvarVendedor(vendedor){
     this.dbService.saveVendedor(vendedor);
+    this.navCtrl.push(LoginPage);
   }
+
+  
+  
 
 
 

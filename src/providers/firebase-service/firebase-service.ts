@@ -21,4 +21,8 @@ export class FirebaseServiceProvider {
         .then(r => console.log(r));
   }
 
+  getAllVendedor(){
+    return this.db.list('vendedor').valueChanges();
+  }
+
 }

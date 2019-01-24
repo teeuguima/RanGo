@@ -1,4 +1,4 @@
-import { LoginInfo } from './../../app/app.module';
+import { LoginInfo, HomeInfo } from './../../app/app.module';
 
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
@@ -6,6 +6,9 @@ import { CadastroPage } from '../cadastro/cadastro';
 import { Socket } from 'ng-socket-io';
 
 import { TabsPage } from '../tabs/tabs';
+import { FirebaseServiceProvider } from '../../providers/firebase-service/firebase-service';
+import { HomePage } from '../home/home';
+import { x } from 'tar';
 
 
 
@@ -23,11 +26,19 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-   email: string;
-   senha: string;
+  email: string;
+  senha: string;
   private emailRecuperar: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private socket: Socket) {
-    socket.on('retorno-login-vendedor', (retorno) => {
+  vendedorAtual: any;
+  retorno : any;
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams, 
+    public alertCtrl: AlertController,
+    public dbService : FirebaseServiceProvider ) {
+    
+
+      /*
       if (retorno === 0) { // sucesso
         console.log('Login realizado com sucesso!');
         this.navCtrl.push(TabsPage);
@@ -37,9 +48,22 @@ export class LoginPage {
       } else if (retorno === 2) { // senha incorreta
         console.log('Senha incorreta.');
       }
-    });
+    
+      */
 
 
+    // Confirmação de login
+    this.vendedorAtual = this.dbService.getAllVendedor();
+    var i;
+    for(i = 0; i < this.vendedorAtual.lentgh; i++){
+      if(this.email === this.vendedorAtual.email && this.senha === this.vendedorAtual.senha){
+        this.retorno = 0;
+      }
+    }
+    if(this.retorno === 0){
+      console.log('Login realizado com sucesso!');
+      this.navCtrl.push(HomePage);
+    }
   }
 
   showAlertConfirm(){
@@ -115,10 +139,18 @@ export class LoginPage {
   }
 
   clickEntrar() {
-    this.socket.emit('login-vendedor', {
-      email: this.email,
-      senha: this.senha
-    });
-  }
+    var i;
+    var x : any;
+    for(i = 0; i < this.vendedorAtual.lentgh; i++){
+      if(this.email === this.vendedorAtual.email && this.senha === this.vendedorAtual.senha){
+        this.retorno = 0;
+      }
+    }
+    if(this.retorno === 0){
+      console.log('Login realizado com sucesso!');
+      this.navCtrl.push(HomePage);
+      
+    }
 
+    };
 }
